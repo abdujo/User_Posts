@@ -5,7 +5,7 @@ const userListEL = document.querySelector('.user-list');
 
 
 
-async function manin() {
+async function main() {
 
     const users = await fetch("https://jsonplaceholder.typicode.com/users");
     const usersData = await users.json();
@@ -15,15 +15,16 @@ async function manin() {
     userListEL.innerHTML = usersData.map(user => userHTML(user)).join('')
 
 }
-manin();
+main();
 function showUserPosts(id) {
+    window.location.href = `http://127.0.0.1:550/user.html`
     
    console.log(id);
 }
 
 
 function userHTML(user) {
-    return `<div class="user-card" onclick="showUserPosts(${user.Id})>
+    return `<div class="user-card" onclick="showUserPosts(${user.id})">
 <div class="user-card__container">
     <h3>${user.name}</h3>
     <p><b>Email:</b> ${user.email}</p>
