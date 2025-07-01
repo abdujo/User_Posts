@@ -17,7 +17,7 @@ async function manin() {
 }
 manin();
 function showUserPosts(id) {
-    window.location.href = `http://127.0.015500/user.html`;
+    
    console.log(id);
 }
 
