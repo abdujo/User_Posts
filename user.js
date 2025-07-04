@@ -8,14 +8,13 @@ async function onSearchChange(event) {
   const postsData = await posts.json();
   postListEL.innerHTML = postsData
     .map(
-      (post) =>
+      post =>
         `<div class="post">
         <div class="post__title">${post.title}</div>
         <p class="post__body">${post.body}</p>
-      </div>`
-    )
-    .join("");
-    
+      </div>
+      ` ).join("");
+
 }
 
 async function main() {
@@ -24,7 +23,7 @@ async function main() {
   const postsData = await posts.json();
   console.log(postsData);
   postListEL.innerHTML = postsData.map(post =>
-      `<div class="post">
+    `<div class="post">
       <div class="post__title">${post.title}</div>
       <p class="post__body">${post.body}</p>
     </div>`
